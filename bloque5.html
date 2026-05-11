@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DroneScan SRL - Integración y Reflexión</title>
+  
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style-index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-robot"></i> DroneScan SRL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown">
+              Soluciones y Análisis
+            </a>
+            <ul class="dropdown-menu mega-menu p-3">
+              <li><a class="dropdown-item" href="bloque1.html">Arquitectura del Sistema</a></li>
+              <li><a class="dropdown-item" href="bloque2.html">Estabilidad y Adaptación</a></li>
+              <li><a class="dropdown-item" href="bloque3.html">Infraestructura TIC</a></li>
+              <li><a class="dropdown-item" href="bloque4.html">Dato e Información</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item fw-bold text-primary" href="bloque5.html">Integración y Reflexión</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button id="theme-toggle" class="btn btn-outline-light ms-3 me-2">
+          <i class="bi bi-moon-stars-fill"></i> Modo Oscuro
+        </button>
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+          <i class="bi bi-exclamation-triangle"></i> Protocolos
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold">Bloque 5: Integración y Reflexión</h1>
+      <p class="lead text-muted">Conclusiones sistémicas y evolución de la plataforma DroneScan</p>
+    </div>
+
+    <div class="card shadow border-0 mb-5 text-dark bg-light">
+      <div class="card-header bg-primary text-white p-4">
+        <h2 class="mb-0"><i class="bi bi-journal-text"></i> 5.1. Reflexión Analítica</h2>
+      </div>
+      <div class="card-body p-4 p-md-5">
+        
+        <h4 class="fw-bold text-primary mb-3">
+          <i class="bi bi-question-circle-fill"></i> ¿Por qué es útil el enfoque sistémico frente al enfoque de "componente por componente"?
+        </h4>
+        <p class="fs-5 mb-4 pb-3 border-bottom border-secondary-subtle">
+          El enfoque clásico (reduccionista) me permite entender la mecánica interna de un motor <i>brushless</i> o la óptica de la cámara multiespectral de forma aislada. Sin embargo, resulta inútil para explicar el vuelo autónomo. El enfoque sistémico es vital porque revela la <strong>sinergia</strong> y las propiedades emergentes. Un motor, por sí solo, no vuela ni releva un campo; pero integrado con el GPS y la controladora bajo un marco de retroalimentación, emerge la capacidad de "navegación inteligente". Estudiarlo como sistema me permite ver cómo la falla de un componente periférico afecta a la totalidad de la misión corporativa.
+        </p>
+
+        <h4 class="fw-bold text-primary mb-3">
+          <i class="bi bi-question-circle-fill"></i> ¿Qué aporta la Teoría de la Información al análisis del dron?
+        </h4>
+        <p class="fs-5 mb-4 pb-3 border-bottom border-secondary-subtle">
+          Me aporta el marco cuantitativo para entender que el vuelo no es solo un fenómeno físico de sustentación aerodinámica, sino un <strong>flujo constante de procesamiento de datos</strong>. Me permite dimensionar la vulnerabilidad del canal de comunicación (el aire) frente al ruido. Gracias al Modelo de Shannon, comprendo que el dron es esencialmente un nodo en una red, y que su supervivencia depende de la fiabilidad matemática con la que codificamos, transmitimos y decodificamos la telemetría en ambientes hostiles (alta entropía probabilística).
+        </p>
+
+        <h4 class="fw-bold text-primary mb-3">
+          <i class="bi bi-question-circle-fill"></i> ¿Qué riesgos sistémicos detecté y cómo mitigarlos?
+        </h4>
+        <div class="fs-5 mb-2">
+          A lo largo del diseño de DroneScan, detecté dos riesgos críticos:
+          <ul class="mt-3">
+            <li class="mb-2"><strong>Acoplamiento fuerte del GPS:</strong> El dron depende críticamente del GPS para su homeostasis espacial. Si hay interferencia solar o estructural, el sistema pierde su referencia y entra en caos (entropía total), provocando un "flyaway" (vuelo a la deriva). 
+              <br><span class="text-success fw-bold"><i class="bi bi-tools"></i> Mitigación:</span> Integrar sensores ópticos de flujo (Optical Flow) apuntando al suelo para tener una segunda fuente de datos de posicionamiento relativo, reduciendo la dependencia absoluta del satélite.
+            </li>
+            <li><strong>Saturación del Canal RF:</strong> En zonas periurbanas, la banda de 2.4 GHz tiene un ruido inmenso.
+              <br><span class="text-success fw-bold"><i class="bi bi-tools"></i> Mitigación:</span> Implementar rutinas de salto de frecuencia algorítmico (FHSS) en el transmisor para evadir dinámicamente el ruido del canal.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow border-0 border-start border-success border-5 text-dark bg-white">
+      <div class="card-body p-4 p-md-5">
+        <h2 class="fw-bold text-success border-bottom border-success pb-2 mb-4">
+          <i class="bi bi-rocket-takeoff-fill"></i> 5.2. Propuesta Concreta de Mejora
+        </h2>
+        
+        <h4 class="fw-bold">Rediseño: Implementación de Enlace Telemetrico Redundante Celular (4G/LTE)</h4>
+        
+        <p class="fs-5 mt-3">
+          <strong>Justificación Sistémica y de la Información:</strong><br>
+          Actualmente, la arquitectura de DroneScan depende de un canal de comunicación único de Radiofrecuencia Directa (RF) entre la Estación Terrestre (GCS) y el dron. Basándome en los conceptos desarrollados en el Bloque 4, este modelo de Shannon de un solo canal presenta un punto único de fallo: si un obstáculo físico (un silo, una montaña) o un inhibidor introduce un nivel de <strong>ruido</strong> que supere la capacidad del código corrector, la comunicación se rompe.
+        </p>
+        
+        <p class="fs-5">
+          Mi propuesta es integrar a bordo un módem 4G/LTE conectado a la controladora. De esta manera, el sistema gana un <strong>canal de comunicación redundante</strong>.
+        </p>
+
+        <div class="alert alert-success fs-5 mt-4" role="alert">
+          <i class="bi bi-check-circle-fill me-2"></i> <strong>Impacto directo:</strong> Reducimos drásticamente la incertidumbre (entropía) del piloto respecto al estado de la máquina. Si el enlace de RF se cae, el sistema transita automáticamente al enlace 4G (red de telefonía móvil) para transmitir la telemetría a través de la Nube (Internet). Esta inyección de <strong>negentropía tecnológica</strong> garantiza que el operador siga recibiendo información precisa sobre la posición y las alarmas, salvaguardando la integridad física del hardware de DroneScan SRL.
+        </div>
+
+      </div>
+    </div>
+
+  </div> <div class="modal fade" id="emergencyModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Protocolos del Sistema</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Mecanismos de estabilidad ante perturbaciones del entorno.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+
+</body>
+</html>

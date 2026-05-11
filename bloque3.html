@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DroneScan SRL - Infraestructura TIC</title>
+  
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style-index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-robot"></i> DroneScan SRL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown">
+              Soluciones y Análisis
+            </a>
+            <ul class="dropdown-menu mega-menu p-3">
+              <li><a class="dropdown-item" href="bloque1.html">Arquitectura del Sistema</a></li>
+              <li><a class="dropdown-item" href="bloque2.html">Estabilidad y Adaptación</a></li>
+              <li><a class="dropdown-item fw-bold text-primary" href="bloque3.html">Infraestructura TIC</a></li>
+              <li><a class="dropdown-item" href="bloque4.html">Dato e Información</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="bloque5.html">Integración y Reflexión</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <button id="theme-toggle" class="btn btn-outline-light ms-3 me-2">
+          <i class="bi bi-moon-stars-fill"></i> Modo Oscuro
+        </button>
+
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+          <i class="bi bi-exclamation-triangle"></i> Protocolos del Sistema
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold">Infraestructura TIC</h1>
+      <p class="lead text-muted">Informática, Telecomunicaciones y Procesamiento de Datos</p>
+    </div>
+
+    <div class="card shadow-sm border-0 mb-5">
+      <div class="card-body p-5">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h2 class="text-primary"><i class="bi bi-pc-display"></i> La Informática en DroneScan</h2>
+            <p class="fs-5 mt-3">Definimos la informática como el <strong>tratamiento automático y racional de la información</strong> por medio de computadoras. En nuestro sistema, este tratamiento ocurre en dos niveles operativos:</p>
+            <ul>
+              <li><strong>A bordo (Edge Computing):</strong> La controladora del dron procesa miles de cálculos por segundo (datos del GPS, acelerómetro) para mantener el vuelo estable y disparar la cámara en las coordenadas exactas.</li>
+              <li><strong>En Tierra (Estación GCS):</strong> Una notebook que recibe la telemetría, interpreta el estado del sistema y permite al operador enviar nuevos comandos planificados.</li>
+            </ul>
+          </div>
+          <div class="col-md-4 text-center">
+            <i class="bi bi-cpu" style="font-size: 8rem; color: #0d6efd;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-center mb-4"><i class="bi bi-layers"></i> Arquitectura Computacional</h3>
+    <div class="row mb-5">
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100 bg-light border-0">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-motherboard text-dark mb-3" style="font-size: 3rem;"></i>
+            <h4 class="text-dark fw-bold">Hardware (El Soporte Físico)</h4>
+            <hr class="border-dark">
+            <p class="text-start text-dark">Son todos los componentes tangibles que permiten la captura y procesamiento de datos. Sin ellos, el software no tendría dónde ejecutarse.</p>
+            <ul class="text-start text-dark fw-medium">
+              <li>Controladora de Vuelo (Microprocesador).</li>
+              <li>Sensores (IMU, Barómetro, Cámara Multiespectral).</li>
+              <li>Módulos de Radiofrecuencia y Antenas.</li>
+              <li>Computadora portátil del operador (GCS).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100 bg-dark text-white border-0">
+          <div class="card-body text-center p-4">
+            <i class="bi bi-code-slash text-info mb-3" style="font-size: 3rem;"></i>
+            <h4>Software (El Soporte Lógico)</h4>
+            <hr class="border-secondary">
+            <p class="text-start">Son los programas, algoritmos e instrucciones que dotan de "inteligencia" al hardware, indicándole cómo debe comportarse.</p>
+            <ul class="text-start text-light">
+              <li><strong>Firmware:</strong> El código base grabado en la controladora (ej. ArduPilot o PX4) que permite la estabilización.</li>
+              <li><strong>Software de Aplicación:</strong> El programa de la notebook (ej. Mission Planner) para trazar rutas.</li>
+              <li><strong>Software de Procesamiento:</strong> Herramientas fotogramétricas para crear mapas 3D.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shadow border-0 border-top border-info border-5">
+      <div class="card-body p-5">
+        <h2 class="text-center mb-4"><i class="bi bi-broadcast text-info"></i> Tecnologías de la Información y Comunicación (TIC)</h2>
+        <p class="text-center lead mb-5">La convergencia de la microelectrónica, la informática y las telecomunicaciones es lo que hace posible el relevamiento aéreo moderno.</p>
+        
+        <div class="row text-center">
+          <div class="col-md-4 mb-3">
+            <div class="p-3">
+              <i class="bi bi-wifi text-primary" style="font-size: 3rem;"></i>
+              <h5 class="mt-3">Telecomunicaciones</h5>
+              <p class="small text-muted">Uso de radioenlaces (2.4 GHz y 5.8 GHz) para establecer un canal de comunicación bidireccional entre el dron y la estación terrestre, venciendo la barrera de la distancia física.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="p-3">
+              <i class="bi bi-microcpe-fill text-success" style="font-size: 3rem;"></i>
+              <h5 class="mt-3">Microelectrónica</h5>
+              <p class="small text-muted">Miniaturización extrema de componentes. Permite que un dron lleve a bordo computadoras y sensores potentes que pesan apenas unos pocos gramos.</p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="p-3">
+              <i class="bi bi-cloud-arrow-up text-info" style="font-size: 3rem;"></i>
+              <h5 class="mt-3">Servicios en la Nube</h5>
+              <p class="small text-muted">Los gigabytes de imágenes capturadas se suben a servidores remotos (Cloud Computing) que utilizan su inmensa capacidad de cálculo para generar los mapas 3D finales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <div class="modal fade" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="emergencyModalLabel"><i class="bi bi-shield-exclamation"></i> Tensión y Adaptación del Sistema</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold">Protocolos automatizados ante perturbaciones del entorno.</p>
+          <p>Nuestro multirrotor cuenta con mecanismos de negentropía diseñados para mantener la estabilidad del sistema ante imprevistos:</p>
+          <hr>
+          <ul>
+            <li><strong>Ráfaga de viento fuerte:</strong> Compensación automática de RPM (Feedback negativo).</li>
+            <li><strong>Pérdida de señal GPS:</strong> Transición inmediata a vuelo manual asistido por el operador humano.</li>
+            <li><strong>Falla crítica de motor:</strong> Activación del algoritmo <em>Return to Home (RTH)</em>.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+
+</body>
+</html>

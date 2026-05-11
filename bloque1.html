@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DroneScan SRL - Arquitectura del Sistema</title>
+  
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style-index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  
+  <style>
+    /* Estilos específicos para la interactividad del dron */
+    .drone-interactive-section {
+      background-color: #e9ecef;
+      border-radius: 15px;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+    }
+    .drone-container {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .drone-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));
+    }
+    
+    /* Radares / Hotspots */
+    .hotspot {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #0d6efd;
+      border-radius: 50%;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      animation: pulse 1.5s infinite;
+      z-index: 10;
+    }
+    .hotspot:hover { background-color: #0a58ca; transform: translate(-50%, -50%) scale(1.2); transition: 0.3s; }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(13, 110, 253, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+    }
+
+    /* POSICIONES AJUSTADAS PARA EL DRON MAVIC */
+    .spot-camera { top: 62%; left: 43%; }   /* Lente frontal */
+    .spot-motor { top: 32%; left: 40%; }    /* Motor superior izquierdo */
+    .spot-antenna { top: 38%; left: 56%; }  /* Parte trasera del cuerpo */
+    .spot-chassis { top: 40%; left: 48%; }  /* Centro del dron */
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-robot"></i> DroneScan SRL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown">
+              Soluciones y Análisis
+            </a>
+            <ul class="dropdown-menu mega-menu p-3">
+              <li><a class="dropdown-item fw-bold text-primary" href="bloque1.html">Arquitectura del Sistema</a></li>
+              <li><a class="dropdown-item" href="bloque2.html">Estabilidad y Adaptación</a></li>
+              <li><a class="dropdown-item" href="bloque3.html">Infraestructura TIC</a></li>
+              <li><a class="dropdown-item" href="bloque4.html">Dato e Información</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="bloque5.html">Integración y Reflexión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container my-5">
+    
+    <div class="text-center mb-5">
+      <h1 class="display-4 fw-bold">Arquitectura del Sistema</h1>
+      <p class="lead text-muted">Análisis bajo la Teoría General de Sistemas (TGS)</p>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-md-12">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h3 class="card-title text-primary"><i class="bi bi-diagram-3"></i> 1.1 El Dron como Sistema</h3>
+            <p>En DroneScan SRL, definimos a nuestro multirrotor no como un simple vehículo, sino como un sistema complejo: un conjunto de elementos interrelacionados que interactúan para lograr un objetivo común (el relevamiento aéreo).</p>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item"><strong>Entradas:</strong> Energía de la batería, comandos del piloto terrestre, señales de satélites GPS, datos del entorno (luz, presión atmosférica).</li>
+              <li class="list-group-item"><strong>Salidas:</strong> Mapas tridimensionales, ortofotos, imágenes RGB, telemetría en tiempo real y calor disipado.</li>
+              <li class="list-group-item"><strong>Procesos:</strong> Algoritmos de estabilización de la controladora, planificación de vuelo y procesamiento de imágenes.</li>
+              <li class="list-group-item"><strong>Frontera:</strong> El chasis físico de fibra de carbono que separa sus componentes internos del exterior.</li>
+              <li class="list-group-item"><strong>Entorno:</strong> El campo de soja relevado, las condiciones climáticas, interferencias de radiofrecuencia y la red satelital.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drone-interactive-section text-center shadow-sm">
+      <h3 class="mb-3 text-dark"><i class="bi bi-search"></i> 1.2 Descomposición en Subsistemas</h3>
+      
+      <div class="drone-container">
+        <img src="assets/img/dron-png-interactivo.png" alt="Dron Interactivo" class="drone-img">
+        
+        <div class="hotspot spot-camera" data-bs-toggle="modal" data-bs-target="#modalCamera" title="Sensores de Captura"></div>
+        <div class="hotspot spot-motor" data-bs-toggle="modal" data-bs-target="#modalMotor" title="Plataforma Física"></div>
+        <div class="hotspot spot-antenna" data-bs-toggle="modal" data-bs-target="#modalAntenna" title="Comunicaciones"></div>
+        <div class="hotspot spot-chassis" data-bs-toggle="modal" data-bs-target="#modalChassis" title="Controladora de Vuelo"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <h3 class="card-title text-primary"><i class="bi bi-bounding-box-circles"></i> 1.3 Flujo del Sistema</h3>
+            <p>Para comprender la interacción total, desarrollamos el siguiente diagrama de bloques que detalla el flujo de energía, datos de control, telemetría y video.</p>
+            <div class="text-center mt-4">
+              <img src="assets/img/diagrama-bloques.png" alt="Diagrama de Bloques del Dron" class="img-fluid rounded border" style="max-height: 250px; object-fit: contain;">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body p-4">
+            <h3 class="card-title text-primary"><i class="bi bi-layers-half"></i> 1.4 Simplificación y Desacoplamiento</h3>
+            <h5 class="mt-3">Simplificación (Caja Negra)</h5>
+            <p>Para entender el vuelo a alto nivel, tratamos a los motores como una "caja negra". Ignoramos el electromagnetismo interno de las bobinas; simplemente asumimos que al ingresar voltaje (entrada), generan empuje y RPM (salida).</p>
+            <h5 class="mt-4">Acoplamiento</h5>
+            <ul>
+              <li><strong>Desacoplado (Débil):</strong> La cámara multiespectral. Si se daña o se cambia por otra más moderna, el dron sigue volando perfectamente sin afectar la navegación.</li>
+              <li><strong>Acoplado (Fuerte):</strong> El módulo GPS y la Controladora. Una falla en el GPS altera radicalmente la capacidad de vuelo autónomo del sistema.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <div class="modal fade" id="modalCamera" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title"><i class="bi bi-camera"></i> Subsistema de Sensores/Captura</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Función principal:</strong> Capturar imágenes y escanear topografía.</p>
+          <p><strong>Entradas y Salidas:</strong> Luz ambiental y láser rebotado (entradas). Archivos digitales RGB, infrarrojos y datos LiDAR (salidas).</p>
+          <p><strong>Relación:</strong> Abastece de datos crudos al servicio en la nube para entregar el producto final.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalMotor" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title"><i class="bi bi-fan"></i> Plataforma Física</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Función principal:</strong> Generar sustentación y movimiento tridimensional.</p>
+          <p><strong>Entradas y Salidas:</strong> Voltaje modulado (entradas). Empuje aerodinámico y calor (salidas).</p>
+          <p><strong>Relación:</strong> Ejecuta físicamente las órdenes de estabilización dictadas por el cerebro (la controladora).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalAntenna" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title"><i class="bi bi-broadcast"></i> Subsistema de Comunicaciones</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Función principal:</strong> Mantener enlace con la estación de control terrestre (GCS).</p>
+          <p><strong>Entradas y Salidas:</strong> Comandos del operador (entradas). Transmisión de video en vivo y telemetría de sensores (salidas).</p>
+          <p><strong>Relación:</strong> Actúa como puente indispensable entre el operador humano y la máquina.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalChassis" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title"><i class="bi bi-cpu"></i> Controladora de Vuelo</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Función principal:</strong> Procesar navegación y ejecutar algoritmos de estabilización.</p>
+          <p><strong>Entradas y Salidas:</strong> Coordenadas GPS y aceleración de la IMU (entradas). Señales PWM hacia los motores (salidas).</p>
+          <p><strong>Relación:</strong> Es el componente central fuertemente acoplado que gestiona todo el hardware de vuelo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+
+</body>
+</html>

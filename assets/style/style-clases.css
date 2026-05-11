@@ -1,0 +1,34 @@
+/* Galería tipo Masonry con CSS Grid */
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  .masonry-item {
+    position: relative;
+    overflow: hidden;
+  }
+  .masonry-item img {
+    width: 100%;
+    transition: transform 0.3s;
+  }
+  .masonry-item:hover img {
+    transform: scale(1.1);
+  }
+  .masonry-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  .masonry-item:hover .masonry-overlay {
+    opacity: 1;
+  }

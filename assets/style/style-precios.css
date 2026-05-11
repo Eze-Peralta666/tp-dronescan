@@ -1,0 +1,9 @@
+.precio-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .highlighted {
+    background-color: #e8f0ff;
+  }

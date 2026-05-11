@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/style-index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  
+  <title>DroneScan SRL - Inicio</title>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"><i class="bi bi-robot"></i> DroneScan SRL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown">
+              Nuestra Tecnología
+            </a>
+            <ul class="dropdown-menu mega-menu p-3">
+              <li><a class="dropdown-item" href="bloque1.html">Bloque 1: El Dron como Sistema</a></li>
+              <li><a class="dropdown-item" href="bloque2.html">Bloque 2: Entropía y Sinergia</a></li>
+              <li><a class="dropdown-item" href="bloque3.html">Bloque 3: Informática y TIC</a></li>
+              <li><a class="dropdown-item" href="bloque4.html">Bloque 4: Dato e Información</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="bloque5.html">Bloque 5: Integración y Reflexión</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button id="theme-toggle" class="btn btn-outline-light ms-3 me-2">
+          <i class="bi bi-moon-stars-fill"></i> Modo Oscuro
+        </button>
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+          <i class="bi bi-exclamation-triangle"></i> Protocolos del Sistema
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero-video position-relative" style="height: 60vh; overflow: hidden; background-color: #000;">
+    <video autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+      <source src="assets/video/vuelo-dron.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+      <div class="text-white text-center">
+        <h1 class="display-3 fw-bold">Relevamiento Aéreo Inteligente</h1>
+        <p class="lead">Soluciones de telemetría y mapeo para el sector agropecuario, minero y civil</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card text-center h-100 shadow-sm destination-card">
+          <img src="assets/img/agro.jpg" class="card-img-top" alt="Análisis Agrícola">
+          <div class="card-body">
+            <h5 class="card-title">Análisis de Estrés Hídrico</h5>
+            <p class="card-text">Capturas multiespectrales para optimizar el riego y el rinde en campos de soja.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-center h-100 shadow-sm destination-card">
+          <img src="assets/img/modelado3d.jpg" class="card-img-top" alt="Modelado 3D">
+          <div class="card-body">
+            <h5 class="card-title">Mapas Tridimensionales</h5>
+            <p class="card-text">Procesamiento LiDAR en la nube para relevamiento de infraestructura terrestre.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card text-center h-100 shadow-sm destination-card">
+          <img src="assets/img/telemetria.jpg" class="card-img-top" alt="Telemetría">
+          <div class="card-body">
+            <h5 class="card-title">Telemetría en Tiempo Real</h5>
+            <p class="card-text">Estación GCS con radioenlace bidireccional seguro y alta disponibilidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center my-5 bg-light p-4 rounded shadow-sm">
+    <h2>Hectáreas Relevadas con Éxito</h2>
+    <h1 id="counter" class="text-primary display-4 fw-bold">0</h1>
+  </div>
+
+  <div class="container my-5">
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active text-center">
+          <blockquote class="fs-4 fst-italic">"La cámara multiespectral del dron nos permitió detectar a tiempo la falla de riego en nuestro lote. Inversión recuperada al instante."</blockquote>
+          <footer class="fw-bold">- Ing. Agrónomo López</footer>
+        </div>
+        <div class="carousel-item text-center">
+          <blockquote class="fs-4 fst-italic">"Voló de forma totalmente autónoma, procesó las ortofotos en la nube y nos entregó el mapa el mismo día. Sinergia pura."</blockquote>
+          <footer class="fw-bold">- Constructora VialNorte</footer>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white p-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h4>Contacto Comercial</h4>
+          <form id="contactForm">
+            <div class="mb-3">
+              <label for="email" class="form-label">Correo electrónico corporativo</label>
+              <input type="email" class="form-control" id="email" placeholder="tu@empresa.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Solicitar Cotización <span id="spinner" class="spinner-border spinner-border-sm d-none"></span>
+            </button>
+          </form>
+          
+          <div class="mt-4">
+            <h5>Síguenos en nuestras redes</h5>
+            <div class="social-sprite-container fs-3">
+              <a href="#" class="text-white me-3" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="text-white me-3" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="text-white" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.400508600869!2d-65.30825318497672!3d-24.18434538437346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5b11111111%3A0x123456789abcdef!2sFacultad%20de%20Ingenier%C3%ADa%20UNJu!5e0!3m2!1ses-419!2sar!4v1680000000000!5m2!1ses-419!2sar" width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content text-dark">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="emergencyModalLabel"><i class="bi bi-shield-exclamation"></i> Tensión y Adaptación del Sistema</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold">Protocolos automatizados ante perturbaciones del entorno.</p>
+          <p>Nuestro multirrotor cuenta con mecanismos de negentropía y feedback diseñados para mantener la estabilidad del sistema ante imprevistos:</p>
+          <hr>
+          <h6>Mecanismos de acción:</h6>
+          <ul>
+            <li><strong>Ráfaga de viento fuerte:</strong> Compensación automática de RPM en motores mediante datos del acelerómetro (Feedback negativo).</li>
+            <li><strong>Pérdida de señal GPS:</strong> Transición inmediata a vuelo manual asistido por el operador humano.</li>
+            <li><strong>Falla crítica de motor:</strong> Activación inmediata del algoritmo <em>Return to Home (RTH)</em> o aterrizaje controlado.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/menu-hover.js"></script> 
+  <script src="assets/js/contador-miembros.js"></script> 
+  <script src="assets/js/spinner-formulario.js"></script>
+
+  <script src="assets/js/dark-mode.js"></script>
+</body>
+</html>
